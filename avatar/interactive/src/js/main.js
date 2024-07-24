@@ -91,17 +91,17 @@ function setupWebRTC() {
         })
       }
 
-      // // Make necessary update to the web page when the connection state changes
-      // peerConnection.oniceconnectionstatechange = e => {
-      //   console.log("WebRTC status: " + peerConnection.iceConnectionState)
+      // Make necessary update to the web page when the connection state changes
+      peerConnection.oniceconnectionstatechange = e => {
+        console.log("WebRTC status: " + peerConnection.iceConnectionState)
 
-      //   if (peerConnection.iceConnectionState === 'connected') {
-      //     document.getElementById('loginOverlay').classList.add("hidden");
-      //   }
+        if (peerConnection.iceConnectionState === 'connected') {
+          document.getElementById('loginOverlay').classList.add("hidden");
+        }
 
-      //   if (peerConnection.iceConnectionState === 'disconnected') {
-      //   }
-      // }
+        if (peerConnection.iceConnectionState === 'disconnected') {
+        }
+      }
 
       // Offer to receive 1 audio, and 1 video track
       peerConnection.addTransceiver('video', { direction: 'sendrecv' })
