@@ -20,7 +20,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     if response.status_code == 200:
         return func.HttpResponse(
-            body= json.dumps(response.json()),
+            body=json.dumps(response.json()),
             status_code=200,
             headers={"Content-Type": "application/json"}
         )
